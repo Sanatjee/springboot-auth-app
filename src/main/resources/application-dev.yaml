@@ -17,3 +17,19 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
     show-sql: true
+  security:
+    jwt:
+      secret: ${JWT_SECRET:appsecret001}
+      issuer: ${JWT_ISSUER:authapi.sanat.com}
+      access-ttl-session: ${JWT_ACCESS_TTL_SESSION:3600}
+      refresh-ttl-session: ${JWT_ACCESS_TTL_SESSION:86400}
+      refresh-token-cookie: ${JWT_REFRESH_COOKIE_NAME:refreshToken}
+      cookie-secure : ${JWT_COOKIE_SECURE:true}
+      cookie-http-only: ${JWT_COOKIE_HTTP_ONLY:true}
+      cookie-same-site: ${JWT_COOKIE_SAME_SITE:lax}
+#logging
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+
